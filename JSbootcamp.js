@@ -25,7 +25,10 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 // const array2 = [4,5,6]
 
 // let array3 = array1.concat(array2)
+// let array4 = [...array1,...array2]    //Same result but using spread
 // console.log(array3)
+// console.log(array4)
+
 
 // let fruits = ['apple','orange']
 // let veggies = ['carrot','onion']
@@ -51,6 +54,8 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 //     caloriesBurnt : 3456,
 // };
 
+// console.log(fitbitData2['totalSteps'])      //Two different methods for accessing the object
+// console.log(fitbitData2.totalSteps)
 
 // const numbers = {
 //     100: 'one hundred',
@@ -72,6 +77,8 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 //         science : 99
 //     }
 // }
+
+
 // student['exams']['art'] = 23
 // console.log(student['exams']['maths'])
 // console.log(student)
@@ -89,11 +96,18 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 //     console.log(animals[i],i)
 // }
 
+
+
+
 // const examScores = [1,2,3,4,5,6,7,8,9,10]
 
 // for (let i = 0; i < examScores.length;i++) {
 //     console.log(i,examScores[i])
 // }
+
+// examScores.forEach(score => console.log(score))
+
+
 
 // const myStudents = [
 //     {
