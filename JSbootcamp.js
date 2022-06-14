@@ -971,5 +971,3 @@ const response = [
 
 // console.log(card1);
 // console.log(myDeck);
-
-
