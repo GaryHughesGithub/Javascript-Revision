@@ -65,9 +65,10 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 
 // const userReviews = {};
 
-// userReviews['gazza84'] = 9.8
-// console.log(userReviews)
-// console.log(userReviews['gazza84'])
+// userReviews.checking = 100;              //Two different methods to add key/value pair to an object
+// userReviews['gazza84'] = 9.8;
+// console.log(userReviews);
+// console.log(userReviews['gazza84']);
 
 // const student = {
 //     firstName : 'Gary',
@@ -83,6 +84,7 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 // console.log(student['exams']['maths'])
 // console.log(student)
 // student['firstName'] = 'Bob'
+// student.exams.testing = 124;
 // console.log(student)
 
 // let nums = [1,2,3];
@@ -137,6 +139,7 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 // ]
 
 // console.log(myStudents[2]['mark'])
+// console.log(myStudents[2].mark)
 
 // for (i=0; i < myStudents.length; i++) {
 //     studentName = myStudents[i]['firstName']
@@ -160,6 +163,7 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 
 // console.log(endWord)
 
+
 // for (let i = 1; i <= 5; i++) {
 //     console.log(i);
 //     for (let j = 10; j >= 0; j-= 5) {
@@ -168,14 +172,14 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 // }
 
 
-// const gameBoard = [
-//     [1,2,3,4,],
-//     [6,8,3,1,],
-//     [9,5,8,2,],
-//     [1,21,1,3,],
-// ]; 
+const gameBoard = [
+    [1,2,3,4,],
+    [6,8,3,1,],
+    [9,5,8,2,],
+    [1,21,1,3,],
+]; 
 
-// let totalScore = 0;
+let totalScore = 0;
 
 // for (let i = 0;i<gameBoard.length;i++){
 //     for (let j=0;j<gameBoard[i].length;j++) {
@@ -225,7 +229,7 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 //     console.log(animals[i])
 // }
 
-// for (let animal of animals) {   //Much cleaner syntax
+// for (animal of animals) {   //Much cleaner syntax
 //     console.log(animal)
 // }
 
@@ -238,6 +242,15 @@ const magicSquare = [
     [9,5,1],
     [4,3,8],
 ]
+
+
+// for (let row of magicSquare) {
+//     let sum = 0;
+//     for(num of row) {
+//         sum += num;
+//     }
+//     console.log(`${row} added together equal : ${sum}`)
+// }
 
 //USING A NORMAL FOR LOOP
 // for ( let i = 0; i < magicSquare.length;i++){
@@ -312,7 +325,6 @@ const movieReviews = {
 // for (let i=1;i<=6;i++){
 //     dieRoll();
 // }
-
 
 
 // function greet(name) {
@@ -972,3 +984,13 @@ const response = [
 // console.log(card1);
 // console.log(myDeck);
 
+
+function deleteNth(arr,i) {
+    let holdingObj = {};
+    return arr.filter(function(j) {
+        holdingObj[j] = (holdingObj[j] || 0) +1;
+        return holdingObj[j] <= i;
+    });
+}
+let result = deleteNth([1,2,3,4,3,4,2,2],2)
+console.log(result);
