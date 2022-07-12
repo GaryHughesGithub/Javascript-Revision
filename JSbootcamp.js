@@ -188,6 +188,7 @@ let totalScore = 0;
 //     }
 // }
 
+
 // for (let i = 0; i < gameBoard.length; i++) {
 //     let row = gameBoard[i];
 //     for(let j = 0; j < row.length; j++) {
