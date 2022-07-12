@@ -35,6 +35,7 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 // let meats = ['chicken','steak','elk']
 
 // let fruitAndVeggies = fruits.concat(veggies)
+// let fruitAndVeggies = [...fruits,...veggies]
 // console.log(fruitAndVeggies)
 
 // let newArray = fruits.concat(veggies,meats)
@@ -107,36 +108,36 @@ let shoppingList = ['cheese','cereal','ice','bacon'];
 //     console.log(i,examScores[i])
 // }
 
-// examScores.forEach(score => console.log(score))
+// examScores.forEach((score) => console.log(score))
 
 
 
-// const myStudents = [
-//     {
-//         firstName : 'Gary',
-//         mark      : 100,
-//     },
-//     {
-//         firstName : 'Cassie',
-//         mark      : 70,
-//     },
-//     {
-//         firstName : 'Caiden',
-//         mark      : 87
-//     },  
-//     {
-//         firstName : 'Lucas',
-//         mark      : 50,
-//     },
-//     {
-//         firstName : 'Mason',
-//         mark      : 30,
-//     },
-//     {
-//         firstName : 'Logan',
-//         mark      : 15,
-//     },
-// ]
+const myStudents = [
+    {
+        firstName : 'Gary',
+        mark      : 100,
+    },
+    {
+        firstName : 'Cassie',
+        mark      : 70,
+    },
+    {
+        firstName : 'Caiden',
+        mark      : 87
+    },  
+    {
+        firstName : 'Lucas',
+        mark      : 50,
+    },
+    {
+        firstName : 'Mason',
+        mark      : 30,
+    },
+    {
+        firstName : 'Logan',
+        mark      : 15,
+    },
+]
 
 // console.log(myStudents[2]['mark'])
 // console.log(myStudents[2].mark)
@@ -401,6 +402,20 @@ const movieReviews = {
 // console.log(average(numbersList));
 
 
+//CODEWARS TEST, RETURN 2 SMALLEST NUMBERS OF AN ARRAY ADDED TOGETHER
+// function sumTwoSmallestNumbers(numbers) {  
+//     let firstNumber = Math.min(...numbers)
+//     let newArray = numbers.filter(function(value,index,arr) {
+//         return value > firstNumber
+//     })
+//     let secondNumber = Math.min(...newArray)
+//     let total = firstNumber + secondNumber
+//     return total
+//   }
+
+// console.log(sumTwoSmallestNumbers([1,3,3,4,5]))
+
+
 //CHALLENGE 3 
 
 //ATTEMPT 1 ..... "char OF alphabet...not...char IN alphabet!"
@@ -600,7 +615,7 @@ const movieReviews = {
 // })
 
 
-const numbers = [1,2,3,4,5,6,7,8,9]
+// const numbers = [1,2,3,4,5,6,7,8,9]
 
 // numbers.forEach(function(num) {
 //     console.log(num*num);
@@ -985,12 +1000,14 @@ const response = [
 // console.log(myDeck);
 
 
-function deleteNth(arr,i) {
-    let holdingObj = {};
-    return arr.filter(function(j) {
-        holdingObj[j] = (holdingObj[j] || 0) +1;
-        return holdingObj[j] <= i;
-    });
-}
-let result = deleteNth([1,2,3,4,3,4,2,2],2)
-console.log(result);
+// function deleteNth(arr,i) {
+//     let holdingObj = {};
+//     return arr.filter(function(j) {
+//         holdingObj[j] = (holdingObj[j] || 0) +1;
+//         return holdingObj[j] <= i;
+//     });
+// }
+// let result = deleteNth([1,2,3,4,3,4,2,2],2)
+// console.log(result);
+
+

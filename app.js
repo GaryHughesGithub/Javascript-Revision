@@ -185,3 +185,78 @@ const votes = ['n','y','n','n','y','n','n','y','n'];
 // }
 
 
+
+// const todo = document.querySelector('#todos .todo')
+
+// todo.style.color = 'gray';
+// todo.style.textDecoration = 'line-Through';
+// todo.style.opacity = '50%';
+
+
+
+
+//////////////////////////////////////
+// EVENTLISTENERS
+//////////////////////////////////////
+
+// const btn = document.querySelector('.btn');
+
+// btn.addEventListener('click', () => {
+//   console.log('You clicked me!')
+// })
+
+// btn.addEventListener('mouseover', () => {
+//   btn.innerText = 'Stop touching me!'
+// })
+
+// btn.addEventListener('mouseout', () => {
+//   btn.innerText = 'Click me!'
+// })
+
+
+
+///////////////////
+
+// const btn = document.querySelector('.impossible_button')
+
+// btn.addEventListener('mouseover', () => {
+//   const height = Math.floor(Math.random() * window.innerHeight);
+//   const width = Math.floor(Math.random() * window.innerWidth);
+//   btn.style.left = `${width}px`;
+//   btn.style.top = `${height}px`;
+// });
+
+// btn.addEventListener('click', () => {
+//   document.body.style.backgroundColor = 'green';
+//   alert('You got me!!')
+// })
+
+//////////////////////
+
+
+const colors = ['red', 'green', 'yellow', 'blue', 'magenta',];
+
+
+const changeColor = function(evt) {
+  console.log(evt)
+  const h1 = document.querySelector('.colorH1');
+  h1.style.color = this.style.backgroundColor
+}
+
+const container = document.querySelector('#boxes');
+
+for (let color of colors) {
+  const box = document.createElement('div');
+  box.style.backgroundColor = color;
+  box.classList.add('box');
+  container.appendChild(box);
+  box.addEventListener('click', changeColor);
+}
+
+
+////////////////////////////////
+
+document.body.addEventListener('keypress', (evt) => {
+  console.log(evt)
+})
+

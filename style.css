@@ -17,3 +17,37 @@ input[type="password"] {
     width: 200px;
     height:100px;
 }
+
+.todo {
+    font-size: 30px;
+    color: olive;
+}
+
+.done {
+    color: gray;
+    text-decoration: line-through;
+    opacity: 50%;
+}
+
+
+.impossible_button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+}
+
+
+h1:nth-child(1){
+    text-align: center;
+}
