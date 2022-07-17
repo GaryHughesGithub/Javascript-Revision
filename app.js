@@ -256,7 +256,47 @@ for (let color of colors) {
 
 ////////////////////////////////
 
-document.body.addEventListener('keypress', (evt) => {
-  console.log(evt)
-})
+// document.body.addEventListener('keypress', (evt) => {
+//   console.log(evt)
+// })
 
+////////////////////////////////
+
+// const input = document.querySelector('#items');
+
+// input.addEventListener('keydown', (evt) => {
+//   console.log('KEYDOWN');
+// })
+
+// input.addEventListener('keypress', (evt) => {
+//   console.log('KEYPRESSED');
+// })
+
+// input.addEventListener('keyup', (evt) => {
+//   console.log('KEYUP');
+// })
+
+// input.addEventListener('keyup', (evt) => {
+//   console.log(evt.key);
+// })
+
+//////////////////////////////////
+
+// const addItem = document.querySelector('#items');
+// const uL = document.querySelector('#shoppingList')
+
+// addItem.addEventListener('keypress', function(evt) {
+//   if (evt.key === 'Enter') {
+//     if (!this.value) {
+//       return;
+//     }
+//     //add a new item to the shopping list
+//     const newItemText = this.value;               //when using this. you cannot use an arrow function!
+//     const newItem = document.createElement('li');
+//     newItem.innerText = newItemText;
+//     uL.appendChild(newItem);
+//     this.value = '';
+//   }
+// });
+
+///////////////////////////////////
