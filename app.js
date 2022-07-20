@@ -300,3 +300,64 @@ for (let color of colors) {
 // });
 
 ///////////////////////////////////
+
+
+// FORM JAVASCRIPT
+
+const form = document.querySelector('#signup')
+
+const creditCard = document.querySelector('#creditCard');
+const checkBox = document.querySelector('#checkBox');
+const selectList = document.querySelector('#selectList');
+
+// form.addEventListener('submit', (evt) => {
+//   evt.preventDefault();
+//   alert('SUBMITTED THE FORM');
+//   console.log('creditCard' ,creditCard.value);
+//   console.log('checkBox', checkBox.checked);
+//   console.log('selectList' ,selectList.value);
+//   //send form to dataBase
+//   //append somthing to page
+//   creditCard.value = ''  //to clear contact form afterwards
+// })
+
+
+// formData = {}
+// creditCard.addEventListener('input', (evt) => {
+//   console.log('CC CHANGED', evt);
+//   formData.creditCard = creditCard.value;
+// });
+
+// checkBox.addEventListener('input', (evt) => {
+//   console.log('CHECKBOX CHANGED', evt);
+//   formData.checkBox = checkBox.checked;
+// });
+
+// selectList.addEventListener('input', (evt) => {
+//   console.log('SELECTLIST CHANGED', evt);
+//   formData.selectList = selectList.value;
+// });
+
+
+formData = {}
+
+//My answer
+// for (let input of [creditCard,checkBox,selectList]) {
+//   input.addEventListener('input' , (evt) => {
+//     if (input.type === 'checkbox') {
+//       formData[evt.target.name] = evt.target.checked;
+//     } else {
+//       formData[evt.target.name] = evt.target.value;
+//     }
+//     console.log(formData);
+//   })
+// }
+
+//Colts anser using destructuring
+// for(let input of [creditCard,checkBox,selectList]) {
+//   input.addEventListener('change', ({target}) => {    //Also change from input to change event
+//     const {name, type, value, checked} = target;
+//     formData[name] = type === 'checkBox' ? checked : value;
+//     console.log(formData);
+//   })
+// }

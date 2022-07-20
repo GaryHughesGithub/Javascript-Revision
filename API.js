@@ -1,3 +1,4 @@
+
 // fetch("https://swapi.dev/api/people/1/")
 // .then((res) => {                    //if there is a repsonse then call function
 //     console.log('RESOLVED!', res);

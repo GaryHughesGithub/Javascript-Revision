@@ -1,13 +1,15 @@
 //Nested changes of background color, so that they change after each other
 //rather than triggering timers at the same time.
 
-// document.body.style.backgroundColor = 'red';
-// setTimeout(() => {
-//     document.body.style.backgroundColor = 'orange'
-//     setTimeout(() => {
-//         document.body.style.backgroundColor = 'yellow'
-//     },2000)
-// },2000)
+// setTimeout(function() {
+//     document.body.style.backgroundColor = 'orange';
+//     setTimeout(function() {
+//         document.body.style.backgroundColor = 'blue';
+//         setTimeout( () => {
+//             document.body.style.backgroundColor = 'indigo';
+//         },2000);
+//     },2000);
+// },2000);
 
 
 //Same effect but declared within a function
@@ -31,19 +33,64 @@
 // });
 
 
+//fakecallBack success and failure are defined when the function is called
+
+// const fakeRequestCallback = (url, success, failure) => {
+//     const delay = Math.floor(Math.random() * 4500) + 500;
+//     setTimeout(() => {
+//         if (delay > 4000) {
+//             failure('Connection Timeout :(')
+//         } else {
+//             success(`Here is your fake data from ${url}`)
+//         }
+//     }, delay)
+// }
+
+// fakeRequestCallback('books.com',
+// function (response) {
+//     console.log("IT WORKED!!!!")
+//     console.log(response)
+// }, function (err) {
+//         console.log("ERROR!!!", err)
+// });
+
+//nested version
+// fakeRequestCallback('books.com/page1',
+//     function (response) {
+//         console.log("IT WORKED!!!!")
+//         console.log(response);
+//         fakeRequestCallback('books.com/page2',
+//             function (response) {
+//                 console.log("IT WORKED AGAIN!!!!")
+//                 console.log(response);
+//                 fakeRequestCallback('books.com/page3',
+//                     function (response) {
+//                         console.log("IT WORKED AGAIN!!!!")
+//                         console.log(response);
+//                     }, function (err) {
+//                             console.log("ERROR!!! 3rd Page", err)
+//                     })
+//             },function (err) {
+//                 console.log("ERROR!!! 2nd Page", err)
+//             })
+//     }, function (err) {
+//         console.log("ERROR!!!", err)
+// });
+
+
 //PROMISES
 
-const fakeRequest = (url) => {
-    return new Promise((resolve,reject) => {
-        const randomNumber = Math.random();
-        setTimeout(() => {
-            if (randomNumber < 0.7) {
-                resolve('HERE"S YOUR FAKE DATA'); 
-            }
-            reject('REQUEST TIMEOUT')          
-        }, 2000);
-    })
-}
+// const fakeRequest = (url) => {
+//     return new Promise((resolve,reject) => {
+//         const randomNumber = Math.random();
+//         setTimeout(() => {
+//             if (randomNumber < 0.7) {
+//                 resolve('HERE"S YOUR FAKE DATA'); 
+//             }
+//             reject('REQUEST TIMEOUT')          
+//         }, 2000);
+//     })
+// }
 
 // fakeRequest('testing/test/test.com')
 // .then((data) => {
@@ -57,14 +104,14 @@ const fakeRequest = (url) => {
 
 //REWRITING THE COLOR CHANGE NESTED FUNCTIONS AS PROMISE
 
-const delayedColorChange = (color, delay) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            document.body.style.backgroundColor = color;
-            resolve();
-        }, delay)
-    })
-}
+// const delayedColorChange = (color, delay) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             document.body.style.backgroundColor = color;
+//             resolve();
+//         }, delay)
+//     })
+// }
 
 // delayedColorChange('pink', 2000)
 // .then(() => {
