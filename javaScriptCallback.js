@@ -17,8 +17,8 @@
 // const delayedColorChange = function(newColor,delay, doNext) {
 //     setTimeout(function() {
 //         document.body.style.backgroundColor = newColor;
-//         doNext && doNext();
-//     },delay)
+//         doNext && doNext();   //you can call doNext(), but this line also checks that an argument was
+//     },delay)      // passed inot the paremter of the function, so it doesnt throw up an error
 // }
 
 
@@ -28,31 +28,32 @@
 
 // delayedColorChange('olive', 5000, () => {
 //     delayedColorChange('teal', 2000, function() {
-//         delayedColorChange('purple', 2000)
+//         delayedColorChange('purple', 2000)   //no call back is passed in to doNext, so it will stop
 //     })
 // });
 
 
+
 //fakecallBack success and failure are defined when the function is called
 
-// const fakeRequestCallback = (url, success, failure) => {
-//     const delay = Math.floor(Math.random() * 4500) + 500;
-//     setTimeout(() => {
-//         if (delay > 4000) {
-//             failure('Connection Timeout :(')
-//         } else {
-//             success(`Here is your fake data from ${url}`)
-//         }
-//     }, delay)
-// }
+const fakeRequestCallback = (url, success, failure) => {
+    const delay = Math.floor(Math.random() * 4500) + 500;
+    setTimeout(() => {
+        if (delay > 4000) {
+            failure('Connection Timeout :(')
+        } else {
+            success(`Here is your fake data from ${url}`)
+        }
+    }, delay)
+}
 
 // fakeRequestCallback('books.com',
-// function (response) {
-//     console.log("IT WORKED!!!!")
-//     console.log(response)
-// }, function (err) {
-//         console.log("ERROR!!!", err)
-// });
+//     function (response) {
+//         console.log("IT WORKED!!!!")
+//         console.log(response)
+//     }, function (err) {
+//             console.log("ERROR!!!", err)
+//     });
 
 //nested version
 // fakeRequestCallback('books.com/page1',
@@ -80,17 +81,17 @@
 
 //PROMISES
 
-// const fakeRequest = (url) => {
-//     return new Promise((resolve,reject) => {
-//         const randomNumber = Math.random();
-//         setTimeout(() => {
-//             if (randomNumber < 0.7) {
-//                 resolve('HERE"S YOUR FAKE DATA'); 
-//             }
-//             reject('REQUEST TIMEOUT')          
-//         }, 2000);
-//     })
-// }
+const fakeRequest = (url) => {
+    return new Promise((resolve,reject) => {
+        const randomNumber = Math.random();
+        setTimeout(() => {
+            if (randomNumber < 0.7) {
+                resolve('HERE"S YOUR FAKE DATA'); 
+            }
+            reject('REQUEST TIMEOUT')          
+        }, 2000);
+    })
+}
 
 // fakeRequest('testing/test/test.com')
 // .then((data) => {
