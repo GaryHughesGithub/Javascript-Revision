@@ -36,16 +36,16 @@
 
 //fakecallBack success and failure are defined when the function is called
 
-const fakeRequestCallback = (url, success, failure) => {
-    const delay = Math.floor(Math.random() * 4500) + 500;
-    setTimeout(() => {
-        if (delay > 4000) {
-            failure('Connection Timeout :(')
-        } else {
-            success(`Here is your fake data from ${url}`)
-        }
-    }, delay)
-}
+// const fakeRequestCallback = (url, success, failure) => {
+//     const delay = Math.floor(Math.random() * 4500) + 500;
+//     setTimeout(() => {
+//         if (delay > 4000) {
+//             failure('Connection Timeout :(')
+//         } else {
+//             success(`Here is your fake data from ${url}`)
+//         }
+//     }, delay)
+// }
 
 // fakeRequestCallback('books.com',
 //     function (response) {
@@ -93,14 +93,20 @@ const fakeRequest = (url) => {
     })
 }
 
-// fakeRequest('testing/test/test.com')
-// .then((data) => {
-//     console.log('REQUEST COMPLETED')
-//     console.log('data is:',data)
-// })
-// .catch((err) => {
-//     console.log('OH SHITE THERES AN ERROR!', err)
-// })
+fakeRequest('testing/test/test.com/page1')
+    .then((data) => {
+        console.log('data page1:',data);
+        fakeRequest('testing/test/test.com/page2')
+            .then( (data) => {
+                console.log('data page2:',data);
+            })
+            .catch( (err) => {
+                console.log('OH SHITE THERES AN ERROR ON PAGE2!', err);
+            })
+    })
+    .catch((err) => {
+        console.log('OH SHITE THERES AN ERROR ON PAGE1!', err);
+    });
 
 
 //REWRITING THE COLOR CHANGE NESTED FUNCTIONS AS PROMISE
